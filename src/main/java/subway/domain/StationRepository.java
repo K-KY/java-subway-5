@@ -22,7 +22,7 @@ public class StationRepository {
 
     private static void addDefaultStation() {
         List<DefaultStation> defaultStations = DefaultStation.stations();
-        defaultStations.forEach(defaultStation -> stations.add(new Station(defaultStation.name())));
+        defaultStations.forEach(defaultStation -> stations.add(new Station(defaultStation.getStationNames())));
     }
 
     public static boolean deleteStation(String name) {
