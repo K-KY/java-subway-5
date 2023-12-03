@@ -9,12 +9,10 @@ import subway.domain.defaultSetting.DefaultStation;
 public class StationRepository {
     private static final List<Station> stations = new ArrayList<>();
 
-    public StationRepository() {
+    public static List<Station> readStations() {
         if (stations.isEmpty()) {
             addDefaultStation();
         }
-    }
-    public static List<Station> readStations() {
         return Collections.unmodifiableList(stations);
     }
 
@@ -29,6 +27,10 @@ public class StationRepository {
 
     public static boolean deleteStation(String name) {
         return stations.removeIf(station -> Objects.equals(station.getName(), name));
+    }
+
+    public static boolean isStationExist(Station station) {
+        return stations.contains(station);
     }
 
 }
