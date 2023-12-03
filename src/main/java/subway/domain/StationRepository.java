@@ -9,6 +9,11 @@ import subway.domain.defaultSetting.DefaultStation;
 public class StationRepository {
     private static final List<Station> stations = new ArrayList<>();
 
+    public StationRepository() {
+        if (stations.isEmpty()) {
+            addDefaultStation();
+        }
+    }
     public static List<Station> stations() {
         return Collections.unmodifiableList(stations);
     }
