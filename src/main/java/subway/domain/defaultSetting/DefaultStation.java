@@ -1,5 +1,7 @@
 package subway.domain.defaultSetting;
 
+import java.util.List;
+
 public enum DefaultStation {
     EDU_UNIV("교대역"),
     RIVER_SOUTH("강남역"),
@@ -13,5 +15,9 @@ public enum DefaultStation {
 
     DefaultStation(String stationName) {
         this.stationName = stationName;
+    }
+
+    public static List<DefaultStation> stations() {
+        return List.of(values());
     }
 }
