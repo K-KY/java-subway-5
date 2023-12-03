@@ -14,7 +14,7 @@ public class StationRepository {
             addDefaultStation();
         }
     }
-    public static List<Station> stations() {
+    public static List<Station> readStations() {
         return Collections.unmodifiableList(stations);
     }
 
@@ -30,4 +30,5 @@ public class StationRepository {
     public static boolean deleteStation(String name) {
         return stations.removeIf(station -> Objects.equals(station.getName(), name));
     }
+
 }
